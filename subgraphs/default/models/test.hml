@@ -1,0 +1,65 @@
+kind: ObjectType
+version: v1
+definition:
+  name: test
+  graphql:
+    typeName: test
+    inputTypeName: testInput
+  fields:
+    - name: id
+      type: Int32!
+    - name: test_column
+      type: String!
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: test
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - id
+          - test_column
+
+---
+kind: Model
+version: v1
+definition:
+  name: test
+  objectType: test
+  filterableFields:
+    - fieldName: id
+      operators:
+        enableAll: true
+    - fieldName: test_column
+      operators:
+        enableAll: true
+  orderableFields:
+    - fieldName: id
+      orderByDirections:
+        enableAll: true
+    - fieldName: test_column
+      orderByDirections:
+        enableAll: true
+  arguments: []
+  graphql:
+    selectUniques: []
+    selectMany:
+      queryRootField: test
+    filterExpressionType: testBoolExp
+    orderByExpressionType: testOrderBy
+  source:
+    collection: test
+    dataConnectorName: clickhouse
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: test
+  permissions:
+    - role: admin
+      select:
+        filter: null

@@ -1,0 +1,26 @@
+kind: ScalarType
+version: v1
+definition:
+  name: Int32
+  graphql:
+    typeName: int32
+
+---
+kind: DataConnectorScalarRepresentation
+version: v1
+definition:
+  dataConnectorName: clickhouse
+  dataConnectorScalarType: Int32
+  representation: Int32
+  graphql:
+    comparisonExpressionTypeName: int32ComparisonExp
+
+---
+kind: DataConnectorScalarRepresentation
+version: v1
+definition:
+  dataConnectorName: clickhouse
+  dataConnectorScalarType: String
+  representation: String
+  graphql:
+    comparisonExpressionTypeName: ClickhouseStringComparisonExp

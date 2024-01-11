@@ -1,0 +1,19 @@
+{
+  "connection": {
+    "username": "default",
+    "password": "CHANGE_ME",
+    "url": "https://CHANGE_ME.clickhouse.cloud"
+  },
+  "tables": [
+    {
+      "name": "test",
+      "schema": "default",
+      "alias": "test",
+      "primary_key": null,
+      "columns": [
+        { "name": "test_column", "alias": "test_column", "data_type": "String" },
+        { "name": "id", "alias": "id", "data_type": "Int32" }
+      ]
+    }
+  ]
+}

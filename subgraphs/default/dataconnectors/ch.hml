@@ -1,0 +1,1361 @@
+kind: DataConnector
+version: v1
+definition:
+  name: clickhouse
+  url:
+    singleUrl: "https://connector-XXX-ue.a.run.app"
+  schema:
+    scalar_types:
+      Bool:
+        aggregate_functions: {}
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Bool
+          _gte:
+            argument_type:
+              type: named
+              name: Bool
+          _lt:
+            argument_type:
+              type: named
+              name: Bool
+          _lte:
+            argument_type:
+              type: named
+              name: Bool
+          _neq:
+            argument_type:
+              type: named
+              name: Bool
+      Date:
+        aggregate_functions:
+          max:
+            result_type:
+              type: named
+              name: Date
+          min:
+            result_type:
+              type: named
+              name: Date
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Date
+          _gte:
+            argument_type:
+              type: named
+              name: Date
+          _lt:
+            argument_type:
+              type: named
+              name: Date
+          _lte:
+            argument_type:
+              type: named
+              name: Date
+          _neq:
+            argument_type:
+              type: named
+              name: Date
+      Date32:
+        aggregate_functions:
+          max:
+            result_type:
+              type: named
+              name: Date32
+          min:
+            result_type:
+              type: named
+              name: Date32
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Date32
+          _gte:
+            argument_type:
+              type: named
+              name: Date32
+          _lt:
+            argument_type:
+              type: named
+              name: Date32
+          _lte:
+            argument_type:
+              type: named
+              name: Date32
+          _neq:
+            argument_type:
+              type: named
+              name: Date32
+      DateTime:
+        aggregate_functions:
+          max:
+            result_type:
+              type: named
+              name: DateTime
+          min:
+            result_type:
+              type: named
+              name: DateTime
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: DateTime
+          _gte:
+            argument_type:
+              type: named
+              name: DateTime
+          _lt:
+            argument_type:
+              type: named
+              name: DateTime
+          _lte:
+            argument_type:
+              type: named
+              name: DateTime
+          _neq:
+            argument_type:
+              type: named
+              name: DateTime
+      DateTime64:
+        aggregate_functions:
+          max:
+            result_type:
+              type: named
+              name: DateTime64
+          min:
+            result_type:
+              type: named
+              name: DateTime64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: DateTime64
+          _gte:
+            argument_type:
+              type: named
+              name: DateTime64
+          _lt:
+            argument_type:
+              type: named
+              name: DateTime64
+          _lte:
+            argument_type:
+              type: named
+              name: DateTime64
+          _neq:
+            argument_type:
+              type: named
+              name: DateTime64
+      Decimal:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Decimal
+          min:
+            result_type:
+              type: named
+              name: Decimal
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Decimal
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Decimal
+          _gte:
+            argument_type:
+              type: named
+              name: Decimal
+          _lt:
+            argument_type:
+              type: named
+              name: Decimal
+          _lte:
+            argument_type:
+              type: named
+              name: Decimal
+          _neq:
+            argument_type:
+              type: named
+              name: Decimal
+      Decimal128:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Decimal128
+          min:
+            result_type:
+              type: named
+              name: Decimal128
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Decimal128
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Decimal128
+          _gte:
+            argument_type:
+              type: named
+              name: Decimal128
+          _lt:
+            argument_type:
+              type: named
+              name: Decimal128
+          _lte:
+            argument_type:
+              type: named
+              name: Decimal128
+          _neq:
+            argument_type:
+              type: named
+              name: Decimal128
+      Decimal256:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Decimal256
+          min:
+            result_type:
+              type: named
+              name: Decimal256
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Decimal256
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Decimal256
+          _gte:
+            argument_type:
+              type: named
+              name: Decimal256
+          _lt:
+            argument_type:
+              type: named
+              name: Decimal256
+          _lte:
+            argument_type:
+              type: named
+              name: Decimal256
+          _neq:
+            argument_type:
+              type: named
+              name: Decimal256
+      Decimal32:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Decimal32
+          min:
+            result_type:
+              type: named
+              name: Decimal32
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Decimal32
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Decimal32
+          _gte:
+            argument_type:
+              type: named
+              name: Decimal32
+          _lt:
+            argument_type:
+              type: named
+              name: Decimal32
+          _lte:
+            argument_type:
+              type: named
+              name: Decimal32
+          _neq:
+            argument_type:
+              type: named
+              name: Decimal32
+      Decimal64:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Decimal64
+          min:
+            result_type:
+              type: named
+              name: Decimal64
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Decimal64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Decimal64
+          _gte:
+            argument_type:
+              type: named
+              name: Decimal64
+          _lt:
+            argument_type:
+              type: named
+              name: Decimal64
+          _lte:
+            argument_type:
+              type: named
+              name: Decimal64
+          _neq:
+            argument_type:
+              type: named
+              name: Decimal64
+      Float32:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Float64
+          min:
+            result_type:
+              type: named
+              name: Float32
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float32
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float32
+          sum:
+            result_type:
+              type: named
+              name: Float32
+          var_pop:
+            result_type:
+              type: named
+              name: Float32
+          var_samp:
+            result_type:
+              type: named
+              name: Float32
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Float32
+          _gte:
+            argument_type:
+              type: named
+              name: Float32
+          _lt:
+            argument_type:
+              type: named
+              name: Float32
+          _lte:
+            argument_type:
+              type: named
+              name: Float32
+          _neq:
+            argument_type:
+              type: named
+              name: Float32
+      Float64:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Float64
+          min:
+            result_type:
+              type: named
+              name: Float64
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Float64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Float64
+          _gte:
+            argument_type:
+              type: named
+              name: Float64
+          _lt:
+            argument_type:
+              type: named
+              name: Float64
+          _lte:
+            argument_type:
+              type: named
+              name: Float64
+          _neq:
+            argument_type:
+              type: named
+              name: Float64
+      IPv4:
+        aggregate_functions: {}
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: IPv4
+          _gte:
+            argument_type:
+              type: named
+              name: IPv4
+          _lt:
+            argument_type:
+              type: named
+              name: IPv4
+          _lte:
+            argument_type:
+              type: named
+              name: IPv4
+          _neq:
+            argument_type:
+              type: named
+              name: IPv4
+      IPv6:
+        aggregate_functions: {}
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: IPv6
+          _gte:
+            argument_type:
+              type: named
+              name: IPv6
+          _lt:
+            argument_type:
+              type: named
+              name: IPv6
+          _lte:
+            argument_type:
+              type: named
+              name: IPv6
+          _neq:
+            argument_type:
+              type: named
+              name: IPv6
+      Int128:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Int128
+          min:
+            result_type:
+              type: named
+              name: Int128
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Int128
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Int128
+          _gte:
+            argument_type:
+              type: named
+              name: Int128
+          _lt:
+            argument_type:
+              type: named
+              name: Int128
+          _lte:
+            argument_type:
+              type: named
+              name: Int128
+          _neq:
+            argument_type:
+              type: named
+              name: Int128
+      Int16:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Int16
+          min:
+            result_type:
+              type: named
+              name: Int16
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Int64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Int16
+          _gte:
+            argument_type:
+              type: named
+              name: Int16
+          _lt:
+            argument_type:
+              type: named
+              name: Int16
+          _lte:
+            argument_type:
+              type: named
+              name: Int16
+          _neq:
+            argument_type:
+              type: named
+              name: Int16
+      Int256:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Int256
+          min:
+            result_type:
+              type: named
+              name: Int256
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Int256
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Int256
+          _gte:
+            argument_type:
+              type: named
+              name: Int256
+          _lt:
+            argument_type:
+              type: named
+              name: Int256
+          _lte:
+            argument_type:
+              type: named
+              name: Int256
+          _neq:
+            argument_type:
+              type: named
+              name: Int256
+      Int32:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Int32
+          min:
+            result_type:
+              type: named
+              name: Int32
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Int64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Int32
+          _gte:
+            argument_type:
+              type: named
+              name: Int32
+          _lt:
+            argument_type:
+              type: named
+              name: Int32
+          _lte:
+            argument_type:
+              type: named
+              name: Int32
+          _neq:
+            argument_type:
+              type: named
+              name: Int32
+      Int64:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Int64
+          min:
+            result_type:
+              type: named
+              name: Int64
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Int64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Int64
+          _gte:
+            argument_type:
+              type: named
+              name: Int64
+          _lt:
+            argument_type:
+              type: named
+              name: Int64
+          _lte:
+            argument_type:
+              type: named
+              name: Int64
+          _neq:
+            argument_type:
+              type: named
+              name: Int64
+      Int8:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: Int8
+          min:
+            result_type:
+              type: named
+              name: Int8
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: Int64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Int8
+          _gte:
+            argument_type:
+              type: named
+              name: Int8
+          _lt:
+            argument_type:
+              type: named
+              name: Int8
+          _lte:
+            argument_type:
+              type: named
+              name: Int8
+          _neq:
+            argument_type:
+              type: named
+              name: Int8
+      Json:
+        aggregate_functions: {}
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Json
+          _gte:
+            argument_type:
+              type: named
+              name: Json
+          _lt:
+            argument_type:
+              type: named
+              name: Json
+          _lte:
+            argument_type:
+              type: named
+              name: Json
+          _neq:
+            argument_type:
+              type: named
+              name: Json
+      String:
+        aggregate_functions: {}
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: String
+          _gte:
+            argument_type:
+              type: named
+              name: String
+          _like:
+            argument_type:
+              type: named
+              name: String
+          _lt:
+            argument_type:
+              type: named
+              name: String
+          _lte:
+            argument_type:
+              type: named
+              name: String
+          _neq:
+            argument_type:
+              type: named
+              name: String
+      UInt128:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: UInt128
+          min:
+            result_type:
+              type: named
+              name: UInt128
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: UInt128
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: UInt128
+          _gte:
+            argument_type:
+              type: named
+              name: UInt128
+          _lt:
+            argument_type:
+              type: named
+              name: UInt128
+          _lte:
+            argument_type:
+              type: named
+              name: UInt128
+          _neq:
+            argument_type:
+              type: named
+              name: UInt128
+      UInt16:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: UInt16
+          min:
+            result_type:
+              type: named
+              name: UInt16
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: UInt64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: UInt16
+          _gte:
+            argument_type:
+              type: named
+              name: UInt16
+          _lt:
+            argument_type:
+              type: named
+              name: UInt16
+          _lte:
+            argument_type:
+              type: named
+              name: UInt16
+          _neq:
+            argument_type:
+              type: named
+              name: UInt16
+      UInt256:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: UInt256
+          min:
+            result_type:
+              type: named
+              name: UInt256
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: UInt256
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: UInt256
+          _gte:
+            argument_type:
+              type: named
+              name: UInt256
+          _lt:
+            argument_type:
+              type: named
+              name: UInt256
+          _lte:
+            argument_type:
+              type: named
+              name: UInt256
+          _neq:
+            argument_type:
+              type: named
+              name: UInt256
+      UInt32:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: UInt32
+          min:
+            result_type:
+              type: named
+              name: UInt32
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: UInt64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: UInt32
+          _gte:
+            argument_type:
+              type: named
+              name: UInt32
+          _lt:
+            argument_type:
+              type: named
+              name: UInt32
+          _lte:
+            argument_type:
+              type: named
+              name: UInt32
+          _neq:
+            argument_type:
+              type: named
+              name: UInt32
+      UInt64:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: UInt64
+          min:
+            result_type:
+              type: named
+              name: UInt64
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: UInt64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: UInt64
+          _gte:
+            argument_type:
+              type: named
+              name: UInt64
+          _lt:
+            argument_type:
+              type: named
+              name: UInt64
+          _lte:
+            argument_type:
+              type: named
+              name: UInt64
+          _neq:
+            argument_type:
+              type: named
+              name: UInt64
+      UInt8:
+        aggregate_functions:
+          avg:
+            result_type:
+              type: named
+              name: Float64
+          max:
+            result_type:
+              type: named
+              name: UInt8
+          min:
+            result_type:
+              type: named
+              name: UInt8
+          stddev_pop:
+            result_type:
+              type: named
+              name: Float64
+          stddev_samp:
+            result_type:
+              type: named
+              name: Float64
+          sum:
+            result_type:
+              type: named
+              name: UInt64
+          var_pop:
+            result_type:
+              type: named
+              name: Float64
+          var_samp:
+            result_type:
+              type: named
+              name: Float64
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: UInt8
+          _gte:
+            argument_type:
+              type: named
+              name: UInt8
+          _lt:
+            argument_type:
+              type: named
+              name: UInt8
+          _lte:
+            argument_type:
+              type: named
+              name: UInt8
+          _neq:
+            argument_type:
+              type: named
+              name: UInt8
+      Unknown:
+        aggregate_functions: {}
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Unknown
+          _gte:
+            argument_type:
+              type: named
+              name: Unknown
+          _lt:
+            argument_type:
+              type: named
+              name: Unknown
+          _lte:
+            argument_type:
+              type: named
+              name: Unknown
+          _neq:
+            argument_type:
+              type: named
+              name: Unknown
+      Uuid:
+        aggregate_functions: {}
+        comparison_operators:
+          _gt:
+            argument_type:
+              type: named
+              name: Uuid
+          _gte:
+            argument_type:
+              type: named
+              name: Uuid
+          _lt:
+            argument_type:
+              type: named
+              name: Uuid
+          _lte:
+            argument_type:
+              type: named
+              name: Uuid
+          _neq:
+            argument_type:
+              type: named
+              name: Uuid
+    object_types:
+      test:
+        fields:
+          id:
+            type:
+              type: named
+              name: Int32
+          test_column:
+            type:
+              type: named
+              name: String
+    collections:
+      - name: test
+        arguments: {}
+        type: test
+        uniqueness_constraints: {}
+        foreign_keys: {}
+    functions: []
+    procedures: []
