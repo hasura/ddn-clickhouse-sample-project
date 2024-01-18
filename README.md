@@ -21,6 +21,9 @@ hasura3 connector create clickhouse:v1 \
 --github-repo-url https://github.com/hasura/ndc-clickhouse/tree/main \
 --config-file ./clickhouse.connector.configuration.json
 ```
+
+you will need to install hasura connector plugin if not already installed  `hasura3 plugins install connector`
+
 4. Once the deployment is done get the connector URL by running `hasura3 connector list`
 5. Update the URL as data connector URL the `ch.hml`. 
 6. run `hasura3 watch` or `hasura3 build create` to create builds on Hasura v3,
